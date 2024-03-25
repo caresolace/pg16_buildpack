@@ -8,4 +8,6 @@ echo "-----> Add Postgres 16 executables to the project"
 
 tar xzf pgsql-16_2.tar.gz -C "$1" | indent
 
+cp pg16.sh "$1/.profile.d/pg16.sh" | indent
+
 echo "Done extracting Postgres 16 executables to the project!" | indent
