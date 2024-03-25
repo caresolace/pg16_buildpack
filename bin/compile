@@ -6,4 +6,6 @@ indent() {
 
 echo "-----> Add Postgres 16 executables to the project"
 
-echo "The BUILD_DIR is $1" | indent
+tar xzf pgsql-16_2.tar.gz -C "$1" | indent
+
+echo "Done extracting Postgres 16 executables to the project!" | indent
