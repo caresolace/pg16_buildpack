@@ -8,6 +8,14 @@ echo "-----> Add Postgres 16 executables to the project"
 
 tar xzf pgsql-16_2.tar.gz -C "$1" | indent
 
-cp pg16.sh "$1/.profile.d/" | indent
+PROFILE_D_DIR="$1/.profile.d"
+
+# Check if .profile.d directory exists, create it if not
+if [ ! -d "$PROFILE_D_DIR" ]; then
+  echo "Creating .profile.d directory..." | indent
+  mkdir -p "$PROFILE_D_DIR"
+fi
+
+cp pg16.sh "$PROFILE_D_DIR" | indent
 
 echo "Done extracting Postgres 16 executables to the project!" | indent
