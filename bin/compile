@@ -1,0 +1,9 @@
+#!/bin/sh
+
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Add Postgres 16 executables to the project"
+
+echo "The BUILD_DIR is $1" | indent
